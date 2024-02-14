@@ -98,5 +98,5 @@ run = ["python3", "manage.py", "runserver", "0.0.0.0:3000"]
 deploymentTarget = "gce"
 
 [auth]
-pageEnabled = true
+pageEnabled = false
 buttonEnabled = false
