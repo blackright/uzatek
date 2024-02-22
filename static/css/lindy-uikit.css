@@ -415,7 +415,30 @@ p {
   padding: 0;
 }
 
-.header.header-6 .navbar-brand img {
+@media only screen and (max-width: 600px) {
+  .header.header-6 .navbar-brand .img_bg {
+  max-width: 180px;
+  }
+  .header.header-6 .navbar-brand img {
+    max-width: 80px;
+  }  
+}
+
+.header.header-6 .navbar-brand .img_sm {
+  display: none;
+} 
+
+@media only screen and (max-width: 600px) {
+  .img_footer {
+    max-width: 280px;
+  }
+}
+
+/* .img_footer {
+  max-width: 280px;
+} */
+
+.header.header-6 .navbar-brand {
   max-width: 180px;
 }
 
