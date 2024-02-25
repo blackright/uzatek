@@ -9,8 +9,8 @@
       <div class="row align-items-center">
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index.html">
-              <img class="img_bg" src="{% static 'img/logo/logo.svg' %}" alt="Uzatek Logo" />
+            <a class="navbar-brand" href="{% url 'home' %}">
+              <img class="img_bg" src="{% static 'img/logo/u_logo.png' %}" alt="Uzatek Logo" />
               <img class="img_sm" src="{% static 'img/logo/U_logo_sm.png' %}" alt="Uzatek Logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
               <ul id="nav6" class="navbar-nav ms-auto">
                 <li class="nav-item">
-                  <a class="page-scroll active" href="#home">Home</a>
+                  <a class="page-scroll active" href="{% url 'home' %}">Home</a>
                 {% comment %} </li>
                 <class="nav-item">
                   <a class="page-scroll" href="#feature">Blog</a>
@@ -31,14 +31,14 @@
                   <a class="page-scroll" href="#feature">Portfolio</a>
                 </li> {% endcomment %}
                 <li class="nav-item">
-                  <a class="page-scroll" href="#about">About</a>
+                  <a class="page-scroll" href="{% url 'about' %}">About</a>
                 </li>
 
                 <!--li class="nav-item">
                   <a class="page-scroll" href="#pricing">Pricing</a>
                 </li-->
                 <li class="nav-item">
-                  <a class="page-scroll" href="#contact">Contact</a>
+                  <a class="page-scroll" href="{% url 'contact' %}">Contact</a>
                 </li>
               </ul>
             </div>

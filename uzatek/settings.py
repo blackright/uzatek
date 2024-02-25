@@ -31,9 +31,19 @@ if SECRET_KEY is None:
   exit(1)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.eu'
+EMAIL_PORT = 587
+EMAIL_USE_SSL = False
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'info@uzatek.com'
+EMAIL_HOST_PASSWORD = '1993J@S()n'
+
+
+ALLOWED_HOSTS = ['*', 'https://402b9642-7d35-417a-b20a-414e86eae41b-00-3omkumnzb82t8.spock.replit.dev/']
 X_FRAME_OPTIONS = '*'
 
 # Application definition
@@ -45,17 +55,29 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'main'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://402b9642-7d35-417a-b20a-414e86eae41b-00-3omkumnzb82t8.spock.replit.dev",
+    # Add other allowed origins as needed
+]
+
+CORS_ALLOWED_METHODS = [
+    'GET',
+    'POST',
 ]
 
 ROOT_URLCONF = 'uzatek.urls'
@@ -129,10 +151,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-if DEBUG == False:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-else:
-    STATIC_ROOT = "/var/www/uzatek.com/static"
+# if DEBUG == False:
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# else:
+#     STATIC_ROOT = "/var/www/uzatek.com/static"
 
 
 # Default primary key field type
