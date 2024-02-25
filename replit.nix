@@ -1,5 +1,7 @@
 { pkgs }: {
   deps = [
+    pkgs.python39Packages.django
+    pkgs.python38Packages.virtualenv
     pkgs.python38Full
   ];
   env = {
